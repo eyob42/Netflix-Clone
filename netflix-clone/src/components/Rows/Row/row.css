@@ -1,0 +1,90 @@
+.row {
+    margin-left: 20px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.row__title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.row__posters {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px 0;
+}
+
+.row__posters::-webkit-scrollbar {
+    display: none;
+}
+
+.row__poster-container {
+    position: relative;
+    margin-right: 10px;
+    transition: transform 450ms;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.row__poster-container:hover {
+    transform: scale(1.08);
+}
+
+/* Netflix Original Badge Styling */
+.row__poster-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #e50914;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 2px;
+    z-index: 2;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.row__poster {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100px;
+    transition: transform 450ms;
+    border-radius: 4px;
+}
+
+.row__posterLarge {
+    max-height: 250px;
+}
+
+.row__poster-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 10px 8px 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0;
+    transition: opacity 300ms;
+    border-radius: 0 0 4px 4px;
+}
+
+.row__poster-container:hover .row__poster-title {
+    opacity: 1;
+}
+
+/* Special styling for large rows (posters) */
+.row__posterLarge + .row__poster-title {
+    font-size: 1rem;
+    padding: 15px 10px 10px;
+}
